@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
@@ -115,7 +116,9 @@ footer{padding:28px 20px 40px;color:var(--muted);text-align:center;font-size:.9r
 <p>When a project throws an error, I stay with it until it works. I plan my time, communicate clearly, and keep going day after day.</p>
 <p>I'm looking for an internship where I can build real products and learn from a team.</p>
 </div>
-  <img src="janvier.png" alt="Photo of TURIKUMWENIMANA Janvier" style="width:160px;height:160px;object-fit:cover;border-radius:50%;border:3px solid var(--a);margin-bottom:18px">
+
+<img src="janvier.png" alt="Photo of TURIKUMWENIMANA Janvier" style="width:190px;height:190px;object-fit:cover;border-radius:50%;border:3px solid var(--a);margin-bottom:18px">
+
 <div class="card"><h3>Languages</h3><div id="langs"></div></div>
 </div>
 </section>
@@ -135,6 +138,7 @@ footer{padding:28px 20px 40px;color:var(--muted);text-align:center;font-size:.9r
 <div class="chips"><span class="chip">Python</span><span class="chip">TensorFlow</span><span class="chip">Keras</span><span class="chip">Streamlit</span><span class="chip">pytest</span></div>
 <div class="btns"><a class="btn pri" href="https://flowerdetecter.streamlit.app/" target="_blank" rel="noopener">Live demo</a><a class="btn" href="https://github.com/yhdjanvier/flower-classifier" target="_blank" rel="noopener">View code</a></div>
 </article>
+
 <article class="card proj">
 <span class="badge">Academic project</span>
 <h3>Student Mark Forecast</h3>
@@ -162,6 +166,7 @@ footer{padding:28px 20px 40px;color:var(--muted);text-align:center;font-size:.9r
 <div class="icons" id="social2"></div>
 </section>
 </main>
+
 <footer>&copy; <span id="yr"></span> TURIKUMWENIMANA Janvier. Kamonyi, Rwanda.</footer>
 
 <script>
@@ -172,50 +177,173 @@ instagram:'<rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4
 facebook:'<path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>',
 whatsapp:'<path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/>',
 mail:'<rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>'};
-var L=[['github','https://github.com/yhdjanvier','GitHub'],['instagram','https://www.instagram.com/yhd_janvier','Instagram'],['facebook','https://www.facebook.com/jack.ishimwe.92/','Facebook'],['whatsapp','https://wa.me/250738497833','WhatsApp'],['mail','mailto:yhdcoltd@gmail.com','Email']];
-var h=L.map(function(x){return '<a class="ic" href="'+x[1]+'" target="_blank" rel="noopener" aria-label="'+x[2]+'"><svg viewBox="0 0 24 24" aria-hidden="true">'+P[x[0]]+'</svg></a>'}).join('');
-document.getElementById('social').innerHTML=h;document.getElementById('social2').innerHTML=h;
+
+var L=[
+['github','https://github.com/yhdjanvier','GitHub'],
+['instagram','https://www.instagram.com/yhd_janvier','Instagram'],
+['facebook','https://www.facebook.com/jack.ishimwe.92/','Facebook'],
+['whatsapp','https://wa.me/250738497833','WhatsApp'],
+['mail','mailto:yhdcoltd@gmail.com','Email']
+];
+
+var h=L.map(function(x){
+return '<a class="ic" href="'+x[1]+'" target="_blank" rel="noopener" aria-label="'+x[2]+'"><svg viewBox="0 0 24 24" aria-hidden="true">'+P[x[0]]+'</svg></a>'
+}).join('');
+
+document.getElementById('social').innerHTML=h;
+document.getElementById('social2').innerHTML=h;
 document.getElementById('yr').textContent=new Date().getFullYear();
 
 var langs=[['Kinyarwanda',100],['English',80],['Swahili',30]];
-document.getElementById('langs').innerHTML=langs.map(function(l){return '<div class="lang"><div class="row"><span>'+l[0]+'</span><span>'+l[1]+'%</span></div><div class="track"><div class="fill" data-w="'+l[1]+'"></div></div></div>'}).join('');
-var sk=[['Python','Strong',90],['HTML and CSS','Strong',85],['Streamlit','Strong',85],['React.js','Working level',65],['JavaScript','Working level',65],['TensorFlow and Keras','Working level',65],['scikit-learn','Working level',65],['Git and GitHub','Working level',65]];
-document.getElementById('skillList').innerHTML=sk.map(function(s){return '<div><div class="row"><span>'+s[0]+'</span><span class="tag">'+s[1]+'</span></div><div class="track"><div class="fill" data-w="'+s[2]+'"></div></div></div>'}).join('');
+
+document.getElementById('langs').innerHTML=langs.map(function(l){
+return '<div class="lang"><div class="row"><span>'+l[0]+'</span><span>'+l[1]+'%</span></div><div class="track"><div class="fill" data-w="'+l[1]+'"></div></div></div>'
+}).join('');
+
+var sk=[
+['Python','Strong',90],
+['HTML and CSS','Strong',85],
+['Streamlit','Strong',85],
+['React.js','Working level',65],
+['JavaScript','Working level',65],
+['TensorFlow and Keras','Working level',65],
+['scikit-learn','Working level',65],
+['Git and GitHub','Working level',65]
+];
+
+document.getElementById('skillList').innerHTML=sk.map(function(s){
+return '<div><div class="row"><span>'+s[0]+'</span><span class="tag">'+s[1]+'</span></div><div class="track"><div class="fill" data-w="'+s[2]+'"></div></div></div>'
+}).join('');
 
 var root=document.documentElement,btn=document.getElementById('theme');
-function setT(t){root.setAttribute('data-theme',t);btn.textContent=t==='dark'?'Day mode':'Night mode';try{localStorage.setItem('theme',t)}catch(e){}}
-var saved=null;try{saved=localStorage.getItem('theme')}catch(e){}
-setT(saved||(matchMedia('(prefers-color-scheme: light)').matches?'light':'dark'));
-btn.addEventListener('click',function(){setT(root.getAttribute('data-theme')==='dark'?'light':'dark')});
 
-var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');e.target.querySelectorAll('.fill').forEach(function(f){f.style.width=f.dataset.w+'%'});io.unobserve(e.target)}})},{threshold:.15});
-document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+function setT(t){
+root.setAttribute('data-theme',t);
+btn.textContent=t==='dark'?'Day mode':'Night mode';
+try{localStorage.setItem('theme',t)}catch(e){}
+}
+
+var saved=null;
+try{saved=localStorage.getItem('theme')}catch(e){}
+
+setT(saved||(matchMedia('(prefers-color-scheme: light)').matches?'light':'dark'));
+
+btn.addEventListener('click',function(){
+setT(root.getAttribute('data-theme')==='dark'?'light':'dark')
+});
+
+var io=new IntersectionObserver(function(es){
+es.forEach(function(e){
+if(e.isIntersecting){
+e.target.classList.add('in');
+e.target.querySelectorAll('.fill').forEach(function(f){
+f.style.width=f.dataset.w+'%'
+});
+io.unobserve(e.target)
+}
+})
+},{threshold:.15});
+
+document.querySelectorAll('.rv').forEach(function(el){
+io.observe(el)
+});
 
 var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
 var code=document.getElementById('code');
-var lines=[[['class ','k'],['Janvier','f'],[':','']],[['    ',''],['role','n'],[' = ',''],['"Full-Stack Developer"','s']],[['    ',''],['stack','n'],[' = [',''],['"Python"','s'],[', ',''],['"React"','s'],[', ',''],['"TensorFlow"','s'],[']','']],[['    ',''],['motto','n'],[' = ',''],['"Think. Analyze. Work."','s']],[['',''],['','']],[['    ',''],['def ','k'],['build','f'],['(self):','']],[['        # never leaves a bug unsolved','c']],[['        ',''],['return ','k'],['"code + logic + AI"','s']]];
-if(reduce){lines.forEach(function(l,i){l.forEach(function(p){var s=document.createElement('span');s.className=p[1];s.textContent=p[0];code.appendChild(s)});code.appendChild(document.createTextNode('\n'))})}
-else{var li=0,pi=0,ci=0,span=null;
+
+var lines=[
+[['class ','k'],['Janvier','f'],[':','']],
+[['    ',''],['role','n'],[' = ',''],['"Full-Stack Developer"','s']],
+[['    ',''],['stack','n'],[' = [',''],['"Python"','s'],[', ',''],['"React"','s'],[', ',''],['"TensorFlow"','s'],[']','']],
+[['    ',''],['motto','n'],[' = ',''],['"Think. Analyze. Work."','s']],
+[['',''],['','']],
+[['    ',''],['def ','k'],['build','f'],['(self):','']],
+[['        # never leaves a bug unsolved','c']],
+[['        ',''],['return ','k'],['"code + logic + AI"','s']]
+];
+
+if(reduce){
+lines.forEach(function(l,i){
+l.forEach(function(p){
+var s=document.createElement('span');
+s.className=p[1];
+s.textContent=p[0];
+code.appendChild(s)
+});
+code.appendChild(document.createTextNode('\n'))
+})
+}
+else{
+var li=0,pi=0,ci=0,span=null;
+
 (function tick(){
 if(li>=lines.length)return;
+
 var part=lines[li][pi];
-if(!part){code.appendChild(document.createTextNode('\n'));li++;pi=0;ci=0;span=null;return setTimeout(tick,220)}
-if(!span){span=document.createElement('span');span.className=part[1];code.appendChild(span)}
-if(ci<part[0].length){span.textContent+=part[0][ci++];return setTimeout(tick,32)}
-pi++;ci=0;span=null;tick()})()}
+
+if(!part){
+code.appendChild(document.createTextNode('\n'));
+li++;
+pi=0;
+ci=0;
+span=null;
+return setTimeout(tick,220)
+}
+
+if(!span){
+span=document.createElement('span');
+span.className=part[1];
+code.appendChild(span)
+}
+
+if(ci<part[0].length){
+span.textContent+=part[0][ci++];
+return setTimeout(tick,32)
+}
+
+pi++;
+ci=0;
+span=null;
+tick()
+})()
+}
 
 var cv=document.getElementById('rain');
-if(!reduce&&cv.getContext){var x=cv.getContext('2d'),ch='{}[]<>/=;01()',fs=16,cols,drops;
-function size(){cv.width=innerWidth;cv.height=innerHeight;cols=Math.floor(cv.width/fs);drops=Array.from({length:cols},function(){return Math.random()*-50})}
-size();addEventListener('resize',size);
+
+if(!reduce&&cv.getContext){
+var x=cv.getContext('2d'),ch='{}[]<>/=;01()',fs=16,cols,drops;
+
+function size(){
+cv.width=innerWidth;
+cv.height=innerHeight;
+cols=Math.floor(cv.width/fs);
+drops=Array.from({length:cols},function(){
+return Math.random()*-50
+})
+}
+
+size();
+addEventListener('resize',size);
+
 setInterval(function(){
 var dark=root.getAttribute('data-theme')==='dark';
-x.fillStyle=dark?'rgba(10,10,20,.12)':'rgba(246,245,255,.12)';x.fillRect(0,0,cv.width,cv.height);
-x.fillStyle=dark?'#8b5cf6':'#6d3cf0';x.font=fs+'px monospace';
-for(var i=0;i<cols;i++){if(i%3)continue;x.fillText(ch[Math.floor(Math.random()*ch.length)],i*fs,drops[i]*fs);
-if(drops[i]*fs>cv.height&&Math.random()>.97)drops[i]=0;drops[i]+=.5}
-},70)}
+
+x.fillStyle=dark?'rgba(10,10,20,.12)':'rgba(246,245,255,.12)';
+x.fillRect(0,0,cv.width,cv.height);
+
+x.fillStyle=dark?'#8b5cf6':'#6d3cf0';
+x.font=fs+'px monospace';
+
+for(var i=0;i<cols;i++){
+if(i%3)continue;
+x.fillText(ch[Math.floor(Math.random()*ch.length)],i*fs,drops[i]*fs);
+if(drops[i]*fs>cv.height&&Math.random()>.97)drops[i]=0;
+drops[i]+=.5
+}
+},70)
+}
 })();
 </script>
 </body>
 </html>
+```
